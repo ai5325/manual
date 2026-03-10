@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Omni Raiderの使い方</title>
+<title>使い方説明</title>
 
 <style>
 
@@ -14,24 +14,24 @@ scroll-behavior:smooth;
 body{
 font-family:"Segoe UI","Noto Sans JP",sans-serif;
 margin:0;
-background:linear-gradient(135deg,#0f172a,#1e293b);
-color:#e5e7eb;
+background:linear-gradient(135deg,#212120);
+color:#ffffff;
 }
 
 a{
-color:#60a5fa;
+color:#ffd700;
 text-decoration:none;
 font-weight:500;
 }
 
 a:hover{
-color:#93c5fd;
+color:#ffe448;
 text-decoration:underline;
 }
 /* タイトルバー */
 
 header{
-background:linear-gradient(90deg,#1e3a8a,#2563eb);
+background:linear-gradient(90deg,#7b5ce7);
 color:white;
 padding:24px;
 text-align:center;
@@ -52,7 +52,7 @@ margin:auto;
 
 .toc{
 width:260px;
-background:rgba(30,41,59,0.9);
+background:#7b5ce7;
 height:100vh;
 position:sticky;
 top:0;
@@ -62,7 +62,7 @@ border-right:1px solid rgba(255,255,255,0.08);
 
 .toc h2{
 margin-top:0;
-color:#93c5fd;
+color:#ffffff;
 }
 
 .toc a{
@@ -70,13 +70,20 @@ display:block;
 padding:10px;
 margin-bottom:6px;
 text-decoration:none;
-color:#cbd5f5;
+color:#ffffff;
 border-radius:6px;
 transition:0.2s;
 }
 
 .toc a:hover{
-background:#334155;
+background:#362670;
+}
+
+.toc a.active{
+background:#ffffff;
+color:#7b5ce7;
+font-weight:700;
+border-radius:6px;
 }
 
 /* 説明エリア */
@@ -89,32 +96,35 @@ padding:40px;
 /* カード */
 
 .step{
-background:rgba(30,41,59,0.85);
+background:#7b5ce7;
 padding:25px;
 margin-bottom:40px;
 border-radius:14px;
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
 backdrop-filter:blur(6px);
 transition:0.2s;
+scroll-margin-top:40vh;
 }
 
-.step:hover{
-transform:translateY(-4px);
-}
 
 /* 見出し */
 
 .step h2{
-margin-top:0;
-color:#60a5fa;
-border-bottom:2px solid rgba(255,255,255,0.1);
-padding-bottom:6px;
+color:#180000;
+text-shadow:2px 2px 0px #ffffff;
+text-shadow:0px 2px 6px rgba(255, 255, 255, 0.4);
+}
+
+.step h1{
+color:#ffffff;
+text-shadow:2px 2px 0px #000000;
+text-shadow:0px 2px 6px rgba(0,0,0,0.4);
 }
 
 /* 画像 */
 
 .step img{
-width:70%;
+width: 60%;
 border-radius:10px;
 margin-top:15px;
 cursor:pointer;
@@ -155,6 +165,7 @@ max-height:90%;
 border-radius:10px;
 }
 
+
 </style>
 
 </head>
@@ -162,7 +173,7 @@ border-radius:10px;
 <body id="top">
 
 <header>
-Omni Raiderの使い方
+使い方説明
 </header>
 
 <div class="layout">
@@ -171,29 +182,27 @@ Omni Raiderの使い方
 <div class="toc">
 
 <h2>目次</h2>
-<a href="#step0">はじめに</a>
+<a href="#step0" class="toc-link">はじめに</a>
 
-<a href="#step1">① 設定</a>
+<a href="#step1" class="toc-link">機能紹介</a>
 
-<a href="#step2">② トークンについて</a>
+<a href="#step2" class="toc-link">Kick/Lock</a>
 
-<a href="#step3">③ Spammer</a>
+<a href="#step3" class="toc-link">JoinMatch</a>
 
-<a href="#step4">④ PlayerGetSpam</a>
+<a href="#step4" class="toc-link">BotInfo/Token</a>
 
-<a href="#step5">⑤ RemoteSpammer</a>
+<a href="#step5" class="toc-link">Join/Leave</a>
 
-<a href="#step6">⑥ WaitingBot</a>
+<a href="#step6" class="toc-link">Spammer</a>
 
-<a href="#step7">⑦ LockRoom</a>
+<a href="#step7" class="toc-link">PlayerGetSpam</a>
 
-<a href="#step8">⑧ Webhook</a>
+<a href="#step8" class="toc-link">Webhook</a>
 
-<a href="#step9">⑨ よくある質問</a>
+<a href="#step9" class="toc-link">RemoteSpammer</a>
 
-<!-- 例：追加するとき
-<a href="#step4">④ ログを見る</a>
--->
+<a href="#step10" class="toc-link">Standby</a>
 
 </div>
 
@@ -203,13 +212,12 @@ Omni Raiderの使い方
 <!-- ② ここが説明ブロック -->
 <div class="step" id="step0">
 
-<h2>はじめに</h2>
+<h1>はじめに</h1>
 
-<p>この説明に使っている画像はver2.0のものになります。<br>
-ver1.0でも機能に変わりはなく見た目のみの変更になります。<br>
-※verの選択はログイン後に変更可能です。</p>
-<img src="img/ver.png" onclick="openImg(this)">
-<h3>[ログイン方法]</h3>
+<p>これはツールの使い方の説明です。<br>
+不明な点等ございましたら、@rrunaまたは@nooa._.aの方までご連絡ください。</p>
+<br>
+<h2>[ログイン方法]</h2>
 <p>Usernameに自分のDiscordの名前を入力してください。<br>
 Passwordには渡されたライセンスキーを入力してください。<br>
 ※一度アカウントを登録すると、次からは自動でUIが起動します。</p>
@@ -220,149 +228,124 @@ Passwordには渡されたライセンスキーを入力してください。<br
 
 </div>
 
-
 <div class="step" id="step1">
 
-<h2>① 設定</h2>
+<h1>機能紹介</h1>
 
-<!-- ③ 説明文 -->
-<h3>[Load Token]</h3>
-<p>以前作ったトークンを使いたいときには、この機能を使用してください。<br>
-※トークンについては目次<a href="#step2">トークンについて</a>をご参照下さい。</p>
-<h3>[Load Proxy]</h3>
-<p>Proxyをお持ちの方はこちらからご使用下さい。</p>
-<h3>[Create Template]</h3>
-<p>SPAM等に使いたいメッセージをテンプレとして残したい方はこちらからファイルに保存できます。<br>
-保存したtxtファイルは、<br>
-Spammerタブなどの「Use Template」ボタンを押すことで読み込むことができます。</p>
+<img src="img/menu.png" onclick="openImg(this)">
 
-<!-- ④ ここに画像名を書く -->
-<img src="img/settings.png" onclick="openImg(this)">
+
 
 </div>
-
 
 <div class="step" id="step2">
 
-<h2>② トークンについて</h2>
+<h1>Kick/Lock</h1>
 
-<p>トークンは、ツールの機能を利用するための認証情報です。<br>
-トークンを取得するには、Module Listの中にあるCreate tokensを開きます。<br>
-トークンに付けたい名前と、作りたい個数を入力します。<br>
-作成ボタンを押すと、左側の-tokens-リストに追加されます。</p>
-<h3>[Nick Names]</h3>
-<p>トークンに付けるニックネームを入力します。<br>
-"Token ID"に既存のトークンIDを入力して、"Change Name"に変更したい名前を入力します。</p>
-<h3>[トークンが使えなくなったら]</h3>
-<p>トークンは1時間以上経つと使えなくなります。（リストに赤い文字で表示されます）<br>
-"Refresh Tokens"ボタンを押すと、またトークンが使えるようになります。</p>
+<p>Room Countで指定した数の部屋をキック部屋またはロック部屋にします。</p>
+
+<h2>[kickRoom]</h2>
+<p>入室してきた人に対して指定したメッセージを送信した後5秒後にキックします。</p>
+
+<h2>[LockRoom]</h2>
+<p>部屋をロック部屋にし、誰も入室できないようにします。</p>
+<br>
+<p>※両者とも、keep-aliveで常時部屋を更新しているので、落ちることはありません。</p>
+
+
 
 </div>
-
 
 <div class="step" id="step3">
 
-<h2>③ Spammer</h2>
+<h1>JoinMatch</h1>
+<p>指定した数のBOTを試合に参加させれます。<br>
+TeamTypeから個人戦、チーム戦を指定できます。</p>
 
-<p>隠れ乱闘にて任意のチャットを大量に流し入れる機能です。</p>
-<h3>[Room ID]</h3>
-<p>ここにゴッフィーの合言葉を入力して下さい。</p>
-<h3>[Join Counts]</h3>
-<p>ここに入れるbotの人数を入力して下さい。</p>
-<h3>[Content Counts]</h3>
-<p>1人あたりが流し込むメッセージの回数を入力して下さい。</p>
-<h3>[All ping]</h3>
-<p>BOTが同時にスパムを送信します。(必須)<br>
-<h3>[Auto Swap]</h3>
-<p>Botが蹴られた場合自動で新しいBotを追加させます。(必須)</p>
-<h3>[Random String]</h3>
-<p>スパムする文章の最後へランダムな文字列を追加します。</p>
-<h3>[RateLimitFixer]</h3>
-<p> レートリミットを掛けられた時、レートリミットが終わるまでリクエストの送信を一時停止します。</p>
-
-<img src="img/spammer.png" onclick="openImg(this)">
 
 </div>
-
 
 <div class="step" id="step4">
 
-<h2>④ PlayerGetSpam</h2>
+<h1>BotInfo/Token</h1>
+<h2>[Create Token]</h2>
+<p>指定した数のBOTを作成</p>
+<h2>[Check Token]</h2>
+<p>BOTの数と名前を表示</p>
+<h2>[ChangeNick]</h2>
+<p>BOTの名前を変更</p>
+<h2>[Refresh Token]</h2>
+<p>Tokenを再発行</p>
 
-<h3>[GetInfo]</h3>
-<p>Passwordにゴッフィーの合言葉を入力してください。<br>
-"GetInfo"ボタンを押して部屋内の参加者の情報を取得できます。</p>
-<h3>[Join＆Send All]</h3>
-<p>参加者全員の持ち物の情報メッセージを送信します。</p>
-
-<img src="img/playergetspam.png" onclick="openImg(this)">
 
 </div>
-
 
 <div class="step" id="step5">
 
-<h2>⑤ RemoteSpammer</h2>
+<h1>Join/Leave</h1>
+<p>指定した数のBOTを部屋に参加させたり、退出させたりできます。</p>
+<img src="img/botjoin.png" onclick="openImg(this)">
 
-<p>ランダムにBOTが部屋を検索して、<br>
-見つかった部屋を順次：メンバーが1人以上ならBOT入室→送信→退室というスパムを送り込みます。<br>
-Twitterなどの宣伝に使ってください。</p>
-<h3>[Skip Empty]</h3>
-<p>部屋に誰もいない場合はスキップします。(必須)</p>
-<h3>[Skip Full]</h3>
-<p>部屋が満員の場合はスキップします。(必須)<br>
-※[All ping]以降は<a href="#step3">③ Spammer</a>で説明されています。</p>
-
-<img src="img/remotespammer.png" onclick="openImg(this)">
 
 </div>
 
-
 <div class="step" id="step6">
 
-<h2>⑥ WaitingBot</h2>
-<p>動画のように部屋がロック中又は満席の場合のみ待機します。<br>
-枠が空いたりすると即BOTは入室し、スパム行為を行います。<br>
-設定等は<a href="#step3">③ Spammer</a>をご参照ください。</p>
+<h1>Spammer</h1>
 
-<video controls width="100%">
-<source src="video/waitingbot.mp4" type="video/mp4">
-</video>
+<h2>[All ping]</h2>
+<p>BOTが同時にスパムを送信します。(推奨)<br>
+<h2>[Auto Swap]</h2>
+<p>Botが蹴られた場合自動で新しいBotを追加させます。(推奨)</p>
+<h2>[Random String]</h2>
+<p>スパムする文章の最後へランダムな文字列を追加します。</p>
+<h2>[RateLimitFixer]</h2>
+<p> レートリミットを掛けられた時、レートリミットが終わるまでリクエストの送信を一時停止します。</p>
+<br>
+<p>※Spammerを使用する際はbotを<a href="#step5">Join</a>させないと使えません。</p>
+
 
 </div>
 
 <div class="step" id="step7">
 
-<h2>⑦ LockRoom</h2>
-<p>Room Nameにゴッフィーの合言葉を入力すると、その部屋をロックできます。</p>
+<h1>PlayerGetSpam</h1>
+<p>部屋内の参加者の情報を取得できます。</p>
+
 
 </div>
 
-
 <div class="step" id="step8">
 
-<h2>⑧ Webhook</h2>
+<h1>Webhook</h1>
 <p>Webhookを使用して、部屋に入らずチャットの内容をDiscordに送ることができます。<br>
 監視BOTは好きな名前のBOTを一人入室でき、違和感なく部屋に潜入することが可能です。<br>
 ※チャットの送信もUI内で可能です。</p>
-<img src="img/webhook.png" onclick="openImg(this)">
+
 
 </div>
 
 
 <div class="step" id="step9">
 
-<h2>⑨ よくある質問</h2>
-<h3>Q.roomに接続できない</h3>
-<p>リクエストの送り過ぎなどでバグがおきています。<br>
-一度GUIを閉じて再起動してみてください。<br>
-それでも直らない場合は、VPNを使ってください。<br>
-それでも直らない場合は、開発者までお問い合わせください。</p>
+<h1>RemoteSpammer</h1>
+<p>見つかった部屋を順次：メンバーが1人以上ならBOT入室→送信→退室というスパムを送り込みます。</p>
 
 
 </div>
-</div>
 
+<div class="step" id="step10">
+
+<h1>Standby</h1>
+<p>動画のように部屋がロック中又は満席の場合のみ待機します。<br>
+枠が空いたりすると即BOTは入室し、スパム行為を行います。</p>
+
+<video controls width="100%">
+<source src="video/waitingbot.mp4" type="video/mp4">
+</video>
+
+
+</div>
 <!-- 画像拡大 -->
 <div class="modal" id="imgModal" onclick="closeImg()">
 <img id="modalImg">
@@ -378,6 +361,31 @@ document.getElementById("modalImg").src=img.src;
 function closeImg(){
 document.getElementById("imgModal").style.display="none";
 }
+
+const sections = document.querySelectorAll(".step");
+const links = document.querySelectorAll(".toc-link");
+
+window.addEventListener("scroll", () => {
+
+let current = "";
+
+sections.forEach(section => {
+const sectionTop = section.offsetTop - window.innerHeight * 0.8;
+
+if(window.scrollY >= sectionTop){
+current = section.getAttribute("id");
+}
+});
+
+links.forEach(link => {
+link.classList.remove("active");
+
+if(link.getAttribute("href") === "#" + current){
+link.classList.add("active");
+}
+});
+
+});
 
 </script>
 
